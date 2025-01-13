@@ -10,6 +10,13 @@ const TodoInput = ({ onAddTodo }) => {
     }
   };
 
+  const handleKeyPress = (e) => {
+    console.log(e.key);
+    if(e.key=="Enter"){
+      handleAdd();
+    }
+  };
+
   return (
     <div>
       <input
@@ -17,6 +24,7 @@ const TodoInput = ({ onAddTodo }) => {
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Enter a task"
+        onKeyPress={handleKeyPress}
       />
       <button onClick={handleAdd}>Add</button>
     </div>

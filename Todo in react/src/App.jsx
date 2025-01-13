@@ -24,9 +24,8 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
       <h1>Todo App</h1>
-     
        <TodoInput onAddTodo={addTodo} />
       <TodoList todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} /> 
     </div>
