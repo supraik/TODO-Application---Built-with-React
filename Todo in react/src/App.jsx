@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
-import "./styles/App.css";
+import "./App.css";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -26,8 +26,9 @@ const App = () => {
   return (
     <div>
       <h1>Todo App</h1>
-      <TodoInput onAddTodo={addTodo} />
-      <TodoList todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} />
+     
+       <TodoInput onAddTodo={addTodo} />
+      <TodoList todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} /> 
     </div>
   );
 };
