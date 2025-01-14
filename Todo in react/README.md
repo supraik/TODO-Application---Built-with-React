@@ -33,3 +33,10 @@ Ideal for beginners and intermediates looking to enhance their React skills.
 1. Clone this repository:
    ```bash
    git clone <repository-url>
+
+2. Navigate to the project directory:
+   ```bash
+   cd todo-app
+3. Install dependecies
+   ```bash
+   npm install
