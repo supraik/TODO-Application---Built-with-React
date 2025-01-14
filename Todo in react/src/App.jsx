@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 import "./App.css";
@@ -10,6 +10,17 @@ const App = () => {
     const newTodo = { id: Date.now(), text, completed: false };
     setTodos([...todos, newTodo]);
   };
+  
+  useEffect(()=>{
+    const storedTodos = JSON.parse(localStorage.getItem('todos'));
+    if(storedTodos){
+      setTodos(storedTodos);
+    }
+  },[]);
+
+  useEffect(()=>{
+    localStorage.setItem('todos',JSON.stringify(todos));
+  });
 
   const deleteTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));

@@ -12,7 +12,10 @@ const TodoItem = ({ todo, onToggle, onDelete }) => {
       >
         {todo.text}
       </span>
-      <button onClick={() => onDelete(todo.id)}>Delete</button>
+      <button onClick={(e) => {
+        e.stopPropagation();
+        onDelete(todo.id)}
+        }>Delete</button>
     </div>
   );
 };
